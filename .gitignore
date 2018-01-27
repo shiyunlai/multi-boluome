@@ -1,3 +1,7 @@
+
+# 忽略各工程下target目录及目录下的文件
+/target/
+
 *.iml
 
 .idea/*
