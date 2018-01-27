@@ -37,6 +37,22 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.3.0.RELEASE</version>
+                <!--
+                其中dao和service是给启动程序starter提供服务的，
+                那么repackage应该加在starter的pom.xml上面，这样能够有效减少打包的体积。
+                望采纳意见，谢谢
+                -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+                        </goals>
+                        <!--可以生成不含依赖包的不可执行Jar包-->
+                        <!-- configuration>
+                          <classifier>exec</classifier>
+                        </configuration> -->
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

@@ -264,3 +264,28 @@ INFO] Building jar: /Users/liuxin/git/模仿项目/multi-boluome/web/target/blm-
 
 ==提醒：所有模块里面的父节点都是一样的哦，不然会报错 unknow.version==
 >WARNING] 'parent.relativePath' of POM blm.server:domain:[unknown-version] 类似
+
+
+# Shiyl的理解
+
+0、dao、domain、service、web这些模块共同构成一个完整的应用能力；
+1、解耦工程内部代码关系：通过maven的多模块方式，把一个整体工程，按层次（web、service、domain、dao）拆分成独立工程；
+2、一个应用一个多模块结构；
+3、一个应用，只有一个springboot运行包（web）；
+
+
+# Shiyl优化
+
+
+
+# 问题
+
+1、如何减少制作出来的jar包大小？
+
+    53M Jan 27 08:24 dao-1.0-SNAPSHOT.jar
+    26M Jan 27 08:24 domain-1.0-SNAPSHOT.jar
+    105M Jan 27 08:24 service-1.0-SNAPSHOT.jar
+    211M Jan 27 08:24 blm-start.jar
+
+   制作出来的jar包太大，dao、domain、service中都包括了很多不需要的spring依赖内容；
+
